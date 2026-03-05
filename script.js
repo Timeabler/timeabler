@@ -545,3 +545,4 @@ window.addEventListener("DOMContentLoaded", () => {
   setupStatCounters();
 });
 
+
