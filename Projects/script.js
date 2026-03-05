@@ -1,4 +1,4 @@
-const FRIEND_NAME = "Frosty"; // ← change this to their name
+const FRIEND_NAME = "Frosty";
 
 const snapshots = [
   {
@@ -28,7 +28,7 @@ const memories = [
     id: "memory-1",
     title: "A state of well-being characterized by emotions ranging from contentment to intense joy; often signaled by a smile or a sense of deep satisfaction.",
     prompt: "Type the word that describes the question.",
-    answer: "Happy", // ← change this to your secret word
+    answer: "Happy",
     memory:
       "We were both way too tired and everything was funny, but that one word completely broke us.",
   },
@@ -37,7 +37,7 @@ const memories = [
     title: "The emergence of a new individual from the body of its parent; the beginning or origin of a life, process, or era.",
     prompt:
       "Type the word that describes the question.",
-    answer: "Birth", // ← change this
+    answer: "Birth",
     memory:
       "Blankets, a ridiculous watchlist, and the exact right amount of chaos in the group chat.",
   },
@@ -45,7 +45,7 @@ const memories = [
     id: "memory-3",
     title: "A period of twenty-four hours, traditionally measured from one midnight to the next, or the interval of time during which the sun is above the horizon.",
     prompt: "Type the word that describes the question.",
-    answer: "day", // ← change this
+    answer: "day",
     memory:
       "Our unofficial HQ. No matter how the day was going, that place reset everything.",
   },
@@ -106,7 +106,7 @@ function setupMusic() {
     setToggleIcon();
   });
 
-  document.addEventListener("visibilitychange", () => {
+  document.addEventListener("visibility", () => {
     if (document.hidden && !audio.paused) {
       audio.pause();
       isPlaying = false;
@@ -544,4 +544,5 @@ window.addEventListener("DOMContentLoaded", () => {
   setupPuzzles();
   setupStatCounters();
 });
+
 
