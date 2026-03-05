@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Our Snowy Wrapped</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A snowy birthday recap of our memories together."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="snow-layer" aria-hidden="true"></div>
+
+    <audio id="bg-music" src="assets/COS My dearest friends.mp3" loop></audio>
+    <audio id="page-flip-sfx" src="assets/page-flip-01a.mp3"></audio>
+
+    <div id="music-gate" class="music-gate">
+      <div class="music-gate-card glass">
+        <h1>Happy Birthday <span id="friend-name">Friend</span> ❄️</h1>
+        <p>
+          I made a little snowy recap of our memories together. Click below to
+          step inside &amp; start the music.
+        </p>
+        <button id="enter-experience" class="primary-button">
+          Enter the Snowglobe
+        </button>
+        <p class="music-note">Make sure your sound is on 🔊</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="logo">Our Snowy Wrapped</div>
+      <button id="music-toggle" class="icon-button" aria-label="Toggle music">
+        ⏸
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-content glass">
+          <p class="eyebrow">Frosty's Birthday Present 2026</p>
+          <h1>
+            A year of memories,<br />
+            wrapped in snow.
+          </h1>
+          <p class="hero-subtitle">
+            Scroll to see our favorite moments, a few tiny stats, and some puzzles along the way.
+          </p>
+          <div class="hero-actions">
+            <a href="#stats" class="primary-button">See our stats</a>
+            <a href="#puzzles" class="ghost-button">Start a puzzle</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="stats">
+        <div class="section-heading">
+          <p class="eyebrow">Silly Stats</p>
+          <h2>Our little recap</h2>
+          <p class="section-subtitle">
+            Some silly stats about our time together.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card glass" data-count-target="20702">
+            <p class="stat-label">Messages sent</p>
+            <p class="stat-value"><span class="stat-number">20702</span></p>
+            <p class="stat-caption">And somehow, never enough.</p>
+          </article>
+
+          <article class="stat-card glass" data-count-target=">7">
+            <p class="stat-label">Times we jick with each other (estimated)</p>
+            <p class="stat-value"><span class="stat-number">>7</span></p>
+            <p class="stat-caption">You horn proot! :3</p>
+          </article>
+
+          <article class="stat-card glass" data-count-target="JICKKK">
+            <p class="stat-label">Top inside jokes</p>
+            <p class="stat-value"><span class="stat-number">JICKKK</span></p>
+            <p class="stat-caption">You sure love to jick.</p>
+          </article>
+
+          <article class="stat-card glass" data-count-target="Uncountable">
+            <p class="stat-label">Shared laughs</p>
+            <p class="stat-value"><span class="stat-number">Uncountable :3</span></p>
+            <p class="stat-caption">And many more coming…</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Photo Drift</p>
+          <h2>Frozen snapshots</h2>
+          <p class="section-subtitle">
+            A bit of small pieces of our memories together.
+          </p>
+        </div>
+
+        <div class="snapshot-launch glass">
+          <p class="snapshot-launch-title">A little photo album</p>
+          <p class="snapshot-launch-subtitle">
+            Click to open — use the arrows to navigate, and zoom in for details.
+          </p>
+          <button id="open-snapshots" class="snapshot-launch-button" type="button">
+            Click to view
+          </button>
+        </div>
+
+        <div
+          id="snapshot-viewer"
+          class="snapshot-viewer"
+          role="dialog"
+          aria-modal="true"
+          aria-hidden="true"
+        >
+          <div class="snapshot-viewer-backdrop" data-snapshot-close="true"></div>
+
+          <div class="snapshot-viewer-panel glass" aria-label="Snapshot viewer">
+            <div class="snapshot-viewer-topbar">
+              <div class="snapshot-viewer-title">
+                Frozen snapshots
+                <span id="snapshot-count" class="snapshot-count">1 / 4</span>
+              </div>
+              <button
+                id="snapshot-close"
+                class="icon-button"
+                type="button"
+                aria-label="Close viewer"
+                data-snapshot-close="true"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div class="snapshot-stage">
+              <button
+                id="snapshot-prev"
+                class="snapshot-nav snapshot-nav-left"
+                type="button"
+                aria-label="Previous photo"
+              >
+                ‹
+              </button>
+
+              <img
+                id="snapshot-img"
+                class="snapshot-img"
+                alt=""
+                draggable="false"
+              />
+
+              <button
+                id="snapshot-next"
+                class="snapshot-nav snapshot-nav-right"
+                type="button"
+                aria-label="Next photo"
+              >
+                ›
+              </button>
+            </div>
+
+            <div class="snapshot-viewer-bottombar">
+              <div id="snapshot-caption" class="snapshot-caption"></div>
+              <div class="snapshot-zoom-controls">
+                <button id="snapshot-zoom-out" class="ghost-button" type="button">
+                  Zoom −
+                </button>
+                <button id="snapshot-zoom-reset" class="ghost-button" type="button">
+                  Reset
+                </button>
+                <button id="snapshot-zoom-in" class="primary-button" type="button">
+                  Zoom +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="puzzles">
+        <div class="section-heading">
+          <p class="eyebrow">Puzzle Path</p>
+          <h2>Solve the puzzles</h2>
+          <p class="section-subtitle">
+            Solve the puzzles and maybe there's something hidden waiting for you. :3
+          </p>
+        </div>
+
+        <div id="puzzle-grid" class="puzzle-grid">
+          <!-- Cards are injected by script.js based on the memories array -->
+        </div>
+      </section>
+
+      <div
+        id="letter-overlay"
+        class="letter-overlay"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="letter-overlay-backdrop" data-letter-close="true"></div>
+        <div class="letter-overlay-panel glass">
+          <button
+            id="letter-close"
+            class="icon-button letter-close-button"
+            type="button"
+            aria-label="Close letter"
+            data-letter-close="true"
+          >
+            ✕
+          </button>
+          <div class="final-card">
+            <p class="eyebrow">A snowy letter</p>
+            <h2>Dear <span id="friend-name-letter">Friend</span>,</h2>
+            <p class="final-text">
+              This whole little site is just my way of saying thank you for
+              being such a huge part of my year. For every late-night chat, every
+              terrible meme, every quiet check-in, and every loud adventure – you
+              made my world feel warmer, even when everything else felt cold.
+            </p>
+            <p class="final-text">
+              I hope the next year is full of even more ridiculous jokes, cozy
+              days, and new memories we haven’t imagined yet. I’m really,
+              really glad it’s you.
+            </p>
+            <p class="final-signoff">With a lot of love,</p>
+            <p class="final-signoff-name">Cedric</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <a href="#top">Back to the top ↑</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
